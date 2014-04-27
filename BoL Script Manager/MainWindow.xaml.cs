@@ -97,6 +97,12 @@ namespace BoLScriptManager
                 return;
             }
 
+            if (_listBox.SelectedItems.Count < 1)
+            {
+                ShowMessage("Please select at least 1 script.", "Error", MessageDialogStyle.AffirmativeAndNegative).ConfigureAwait(false);
+                return;
+            }
+
            //Move checked scripts into BoL folder from Scripts folder.
             foreach (string script in _listBox.SelectedItems)
             {            
