@@ -1,0 +1,31 @@
+﻿<controls:MetroWindow x:Class="BoLScriptManager.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+        xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+        Title="BoL Script Manager" Height="380.818" Width="594.34" WindowStartupLocation="CenterScreen" Icon="scripticon.ico" Loaded="MetroWindow_Loaded">
+    
+    
+    <Grid>
+        <xctk:CheckListBox x:Name="_listBox"
+                            DisplayMemberPath="Color"
+                            ValueMemberPath="Level" 
+                            SelectedMemberPath="IsSelected"
+                            SelectedValue="{Binding SelectedValue}"
+                            SelectedItemsOverride="{Binding SelectedItems}" Margin="10,78,10,42" >
+        </xctk:CheckListBox>
+        <Label Content="BoL Scripts:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="25,10,0,0"/>
+        <TextBox x:Name="bolScriptLocation" HorizontalAlignment="Left" Height="23" Margin="101,11,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="276"/>
+        <Button Content="..." HorizontalAlignment="Left" Margin="382,10,0,0" VerticalAlignment="Top" Width="25" RenderTransformOrigin="0.419,-0.086" Click="Button_Click"/>
+        <Button Content="Update Scripts" HorizontalAlignment="Left" Margin="453,40,0,0" VerticalAlignment="Top" Width="126" Height="26" Click="Button_Click_1"/>
+        <Button Content="Move Current" HorizontalAlignment="Left" VerticalAlignment="Top" Width="126" Margin="453,10,0,0" Click="Button_Click_2"/>
+        <Button Content="Add" HorizontalAlignment="Left" Margin="504,314,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0.542,-0.049" Click="Button_Click_3"/>
+        <Label Content="Scripts:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="48,44,0,0"/>
+        <TextBox x:Name="scriptLocation" HorizontalAlignment="Left" Height="23" Margin="101,44,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="276"/>
+        <Button Content="..." HorizontalAlignment="Left" Margin="382,43,0,0" VerticalAlignment="Top" Width="25" RenderTransformOrigin="0.419,-0.086" Click="Button2_Click"/>
+        
+    </Grid>
+    
+    
+    
+</controls:MetroWindow>
