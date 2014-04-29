@@ -5,6 +5,8 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Forms;
 
+using AutoUpdaterDotNET;
+
 namespace BoLScriptManager
 {
     /// <summary>
@@ -16,6 +18,10 @@ namespace BoLScriptManager
         public MainWindow()
         {
             InitializeComponent();
+
+            AutoUpdater.OpenDownloadPage = true;
+            AutoUpdater.LetUserSelectRemindLater = false;
+            AutoUpdater.Start("https://raw.githubusercontent.com/OxideDevelopment/BoL-Script-Manager/master/BoL%20Script%20Manager/Updates/updater.xml");
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -28,6 +34,7 @@ namespace BoLScriptManager
 
             bolScriptLocation.Text = dlg.SelectedPath;
             Properties.Settings.Default.BoLScript = dlg.SelectedPath;
+            Properties.Settings.Default.Save();
         }
 
         private void Button2_Click(object sender, RoutedEventArgs e)
@@ -40,11 +47,14 @@ namespace BoLScriptManager
 
             scriptLocation.Text = dlg.SelectedPath;
             Properties.Settings.Default.Script = dlg.SelectedPath;
+            Properties.Settings.Default.Save();
 
             string[] files = Directory.GetFiles(dlg.SelectedPath);
             foreach (string file in files)
             {
-                _listBox.Items.Add(file);
+                //Get just the file name.
+                string[] rawname = file.Split('\\');
+                _listBox.Items.Add(rawname[rawname.Length - 1]);
             }
         }
 
@@ -56,7 +66,9 @@ namespace BoLScriptManager
             string[] files = Directory.GetFiles(scriptLocation.Text);
             foreach (string file in files)
             {
-                _listBox.Items.Add(file);
+                //Get just the file name.
+                string[] rawname = file.Split('\\');
+                _listBox.Items.Add(rawname[rawname.Length - 1]);
             }
         }
 
@@ -93,8 +105,7 @@ namespace BoLScriptManager
         {
             if (_listBox.SelectedItems.Count > 5)
             {
-                ShowMessage("Due to BoL restrictions, you may only choose 5 scripts.", "Error", MessageDialogStyle.AffirmativeAndNegative).ConfigureAwait(false);
-                return;
+                ShowMessage("As a free user, please remember you can only use 5 scripts.", "Warning!", MessageDialogStyle.Affirmative).ConfigureAwait(false);
             }
 
             if (_listBox.SelectedItems.Count < 1)
