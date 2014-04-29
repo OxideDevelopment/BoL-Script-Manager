@@ -76,6 +76,8 @@ namespace BoLScriptManager
         {
             bolScriptLocation.Text = Properties.Settings.Default.BoLScript;
             scriptLocation.Text = Properties.Settings.Default.Script;
+
+            Button_Click_1(null, null);
         }
 
         private void Button_Click_2(object sender, RoutedEventArgs e)
@@ -85,7 +87,8 @@ namespace BoLScriptManager
             foreach (string script in bolScripts)
             {
                 //Get the filename.
-                string dest = scriptLocation.Text + "\\" + script;
+                string[] filenameChop = script.Split('\\');
+                string dest = scriptLocation.Text + "\\" + filenameChop[filenameChop.Length - 1];
                 File.Move(script, dest);
                 Button_Click_1(null, null);
             }
@@ -117,7 +120,7 @@ namespace BoLScriptManager
             foreach (string script in _listBox.SelectedItems)
             { 
                 string dest = bolScriptLocation.Text + "\\" + script;
-                File.Move(script, dest);
+                File.Move(scriptLocation.Text + "\\" + script, dest);
                 Button_Click_1(null, null);
             }
         } 
