@@ -85,8 +85,7 @@ namespace BoLScriptManager
             foreach (string script in bolScripts)
             {
                 //Get the filename.
-                string[] filenameChop = script.Split('\\');
-                string dest = scriptLocation.Text + "\\" + filenameChop[filenameChop.Length - 1];
+                string dest = scriptLocation.Text + "\\" + script;
                 File.Move(script, dest);
                 Button_Click_1(null, null);
             }
@@ -116,9 +115,8 @@ namespace BoLScriptManager
 
            //Move checked scripts into BoL folder from Scripts folder.
             foreach (string script in _listBox.SelectedItems)
-            {            
-                string[] fileNameChopped = script.Split('\\');
-                string dest = bolScriptLocation.Text + "\\" + fileNameChopped[fileNameChopped.Length - 1];
+            { 
+                string dest = bolScriptLocation.Text + "\\" + script;
                 File.Move(script, dest);
                 Button_Click_1(null, null);
             }
