@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <item>
 <title>New version 1.2.0.0 is available for AutoUpdaterTest</title>
-<version>1.3.0.0</version>
+<version>1.2.0.0</version>
 <url>https://raw.githubusercontent.com/OxideDevelopment/BoL-Script-Manager/master/BoL%20Script%20Manager/Updates/BoLScriptManager.zip</url>
 <changelog>https://raw.githubusercontent.com/OxideDevelopment/BoL-Script-Manager/master/BoL%20Script%20Manager/Updates/Changelog.txt</changelog>
 </item>
