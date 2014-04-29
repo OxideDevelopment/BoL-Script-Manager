@@ -1,7 +1,7 @@
 ﻿
-		Version 1.1
+Version 1.1
 
-	Allowed more then 5 scripts.
-	Added auto updater.
-	Now only shows the file names, not the whole path.
-	Fixed a bug where script locations wasn't saving properly.
+Allowed more then 5 scripts.
+Added auto updater.
+Now only shows the file names, not the whole path.
+Fixed a bug where script locations wasn't saving properly.
