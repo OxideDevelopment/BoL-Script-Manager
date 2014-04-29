@@ -21,7 +21,7 @@ namespace BoLScriptManager
 
             AutoUpdater.OpenDownloadPage = true;
             AutoUpdater.LetUserSelectRemindLater = false;
-            AutoUpdater.Start("https://raw.githubusercontent.com/OxideDevelopment/BoL-Script-Manager/master/BoL%20Script%20Manager/Updates/updater.xml");
+            AutoUpdater.Start("https://github.com/OxideDevelopment/BoL-Script-Manager/blob/master/BoL%20Script%20Manager/Updates/updater.xml");
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
